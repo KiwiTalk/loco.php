@@ -30,10 +30,9 @@ final class ProtocolInfo implements ProtocolHostInfo {
 		return substr(ProtocolInfo::calculateFullXVCKey($aHeader, $email, $deviceUUID), 0, 16);
 	}
 
-	public static function getAuthHeader(string $verifyCodeExtra/*, int $contentLength*/): array {
+	public static function getAuthHeader(string $verifyCodeExtra): array {
 		return [
 				"Content-Type: application/x-www-form-urlencoded",
-				//"Content-Length: {$contentLength}",
 				"Host: " . ProtocolInfo::AccountInternalHost,
 				"A: " . ProtocolInfo::AuthHeaderAgent,
 				"X-VC: ${verifyCodeExtra}",

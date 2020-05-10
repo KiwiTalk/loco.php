@@ -9,7 +9,7 @@ function autoLoad(string $path) {
 	}
 }
 
-autoLoad('./src/');
+autoLoad(__DIR__ . '/src/');
 /*
 $parallelManager = new \loco\parallel\ParallelManager();
 

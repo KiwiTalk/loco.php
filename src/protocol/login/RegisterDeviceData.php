@@ -4,7 +4,7 @@
 namespace loco\structure;
 
 
-class DeviceRegisterData {
+class RegisterDeviceData {
 	public string $passcode;
 	public string $email;
 	public string $password;
@@ -24,5 +24,17 @@ class DeviceRegisterData {
 		$obj->permanent = $permanent;
 
 		return $obj;
+	}
+
+	public function __toArray(): array {
+		return [
+				"passcode"    => $this->passcode,
+				"email"       => $this->email,
+				"password"    => $this->password,
+				"device_uuid" => $this->device_uuid,
+				"os_version"  => $this->os_version,
+				"device_name" => $this->device_name,
+				"permanent"   => $this->permanent
+		];
 	}
 }
